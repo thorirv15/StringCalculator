@@ -8,7 +8,7 @@ public class Calculator {
 
 	private static int getSum(String numbers) {
 		int sum = 0;	
-		String [] numberArr = numbers.split(",");
+		String [] numberArr = numbers.split(",|\n");
 		
 		if(numberArr.length > 1) {
 			for(String s: numberArr) {

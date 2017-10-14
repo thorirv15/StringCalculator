@@ -24,4 +24,9 @@ public class CalculatorTest {
 		assertEquals(16, Calculator.add("2,3,10,1"));
 	}
 
+	@Test
+	public void testStringNumbersSeperatedByNewlineAndCommas() {
+		assertEquals(16, Calculator.add("2,3,10\n1"));
+	}
+
 }
