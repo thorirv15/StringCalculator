@@ -19,4 +19,9 @@ public class CalculatorTest {
 		assertEquals(5, Calculator.add("2,3"));
 	}
 
+	@Test
+	public void testStringContainingMultibleNumbers() {
+		assertEquals(16, Calculator.add("2,3,10,1"));
+	}
+
 }
