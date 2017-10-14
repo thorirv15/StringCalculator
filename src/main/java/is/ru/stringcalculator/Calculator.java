@@ -8,10 +8,10 @@ public class Calculator {
 
 		int sum = 0;	
 		String [] numberArr = numbers.split(",");
-		if(numberArr.length > 1) {
-			for(String s: numberArr) {
-				sum += Integer.parseInt(s);
-			}
+		if(numberArr.length == 2) {
+				sum = Integer.parseInt(numberArr[0]) 
+					+ Integer.parseInt(numberArr[1]);
+								
 			return sum;
 		}
 
