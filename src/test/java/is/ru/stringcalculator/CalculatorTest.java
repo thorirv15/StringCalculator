@@ -14,4 +14,9 @@ public class CalculatorTest {
 		assertEquals(2, Calculator.add("2"));
 	}
 
+	@Test
+	public void testStringContainingTwoNumbers() {
+		assertEquals(5, Calculator.add("2,3"));
+	}
+
 }

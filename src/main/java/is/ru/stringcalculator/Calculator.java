@@ -2,15 +2,19 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 	public static int add(String numbers) {
-		// String numberArr = numbers.split(",");
-		// if(numberArr.length() == 0) {
-		// 	return 0;
-		// }
-		// if(numberArr)
 		if(numbers == "") {
 			return 0;
 		}
-		
+
+		int sum = 0;	
+		String [] numberArr = numbers.split(",");
+		if(numberArr.length > 1) {
+			for(String s: numberArr) {
+				sum += Integer.parseInt(s);
+			}
+			return sum;
+		}
+
 		return Integer.parseInt(numbers);
 	}
 }
