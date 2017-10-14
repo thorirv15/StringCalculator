@@ -2,11 +2,11 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 
-	private static int toInt(int number){
+	private static int toInt(String number){
 		return Integer.parseInt(number);
 	}
 
-	private static int sum(String numbers) {
+	private static int getSum(String numbers) {
 		int sum = 0;	
 		String [] numberArr = numbers.split(",");
 		
@@ -25,7 +25,7 @@ public class Calculator {
 			return 0;
 		}
 
-		int sum = sum(numbers);
+		int sum = getSum(numbers);
 
 		return sum;
 	}
