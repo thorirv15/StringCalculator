@@ -48,6 +48,11 @@ public class CalculatorTest {
 	}
 
 	@Test
+	public void testIfnumbersEqualTo1000AreNotIgnored() {
+		assertEquals(1002, Calculator.add("1000,2"));
+	}
+
+	@Test
 	public void testInputstringWithDifferentDelimeter() {
 		assertEquals(3, Calculator.add("//;\n1;2"));
 	}
