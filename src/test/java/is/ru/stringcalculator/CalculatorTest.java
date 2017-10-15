@@ -38,6 +38,16 @@ public class CalculatorTest {
 	}
 
 	@Test
+	public void testStringWithNoNegNumber() {
+	    try {
+			assertEquals(16, Calculator.add("2\n3,10\n1"));
+		}
+		catch (Exception e) {
+			assertEquals("Negatives not allowed: -1", e.getMessage());
+		}
+	}
+
+	@Test
 	public void testStringWithOneNegNumber() {
 	    try {
 			assertEquals(1, Calculator.add("-1,2"));
@@ -92,5 +102,4 @@ public class CalculatorTest {
 		assertEquals(3, Calculator.add("//;;;;\n1;2"));
 	}
 
-	
 }
