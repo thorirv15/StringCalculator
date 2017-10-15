@@ -78,12 +78,19 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testInputstringWithDifferentDelimeter() {
+	public void testInputstringWithDifferentDelimeter1() {
 		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
+
+	@Test
+	public void testInputstringWithDifferentDelimeter2() {
+		assertEquals(3, Calculator.add("//%\n1%2"));
 	}
 
 	@Test
 	public void testInputstringWithDifferentDelimeterOfLength4() {
 		assertEquals(3, Calculator.add("//;;;;\n1;2"));
 	}
+
+	
 }
