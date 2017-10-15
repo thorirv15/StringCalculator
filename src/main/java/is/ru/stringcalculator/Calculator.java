@@ -9,7 +9,7 @@ public class Calculator {
 	private static int getSum(String numbers) {
 		int sum = 0;
 
-		String [] numberArr = getSplittedArr(numbers);
+		String [] numberArr = getSplittedString(numbers);
 		
 		if(numberArr.length > 1) {
 			for(String s: numberArr) {
@@ -23,7 +23,7 @@ public class Calculator {
 		return toInt(numbers);
 	}
 
-	private static String [] getSplittedArr(String numbers) {
+	private static String [] getSplittedString(String numbers) {
 		String splitter = "";
 
 		if(numbers.startsWith("//")){
@@ -37,24 +37,24 @@ public class Calculator {
 		return  numbers.split(splitter);
 	}
 
-	private static boolean validationForInput(String numbers) {
-		String [] numberArr = getSplittedArr(numbers);
-		boolean isNegNumber = false;
+	private static boolean inputIsValid(String numbers) {
+		String [] numberArr = getSplittedString(numbers);
+		boolean noNegNumber = true;
 		String errorString = "";
 
 		for(int i = 0; i < numberArr.length; i++) {
 			if(toInt(numberArr[i]) < 0) {
 				errorString += (numberArr[i] + ",");
-				isNegNumber = true;
+				noNegNumber = false;
 			} 
 		}
 
-		if(isNegNumber) {
+		if(!noNegNumber) {
 			String exceptionString = errorString.substring(0, errorString.length() - 1);
 			throw new IllegalArgumentException("Negatives not allowed: " + exceptionString);
 		}
 
-		return false;
+		return noNegNumber;
 	}
 
 	public static int add(String numbers) {
@@ -62,7 +62,7 @@ public class Calculator {
 			return 0;
 		}
 
-		if(!validationForInput(numbers)){		
+		if(inputIsValid(numbers)){		
 			int sum = getSum(numbers);
 			return sum;
 		}
