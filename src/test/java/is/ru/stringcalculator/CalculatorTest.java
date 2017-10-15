@@ -43,7 +43,7 @@ public class CalculatorTest {
 			assertEquals(16, Calculator.add("2\n3,10\n1"));
 		}
 		catch (Exception e) {
-			assertEquals("Negatives not allowed: -1", e.getMessage());
+			assertEquals("Negatives not allowed: ", e.getMessage());
 		}
 	}
 
