@@ -33,12 +33,22 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testStringWithNegNumbers() {
+	public void testStringWithOneNegNumber() {
 	    try {
-			assertEquals(2, Calculator.add("1,3\n4\n-1,-2\n-3"));
+			assertEquals(1, Calculator.add("-1,2"));
 		}
 		catch (Exception e) {
-			assertEquals("Negatives not allowed: -1,-2,-3", e.getMessage());
+			assertEquals("Negatives not allowed: -1", e.getMessage());
+		}
+	}
+
+	@Test
+	public void testStringWithMoreThenOneNegNumbers() {
+	    try {
+			assertEquals(-4, Calculator.add("2,-4,3,-5"));
+		}
+		catch (Exception e) {
+			assertEquals("Negatives not allowed: -4,-5", e.getMessage());
 		}
 	}
 
