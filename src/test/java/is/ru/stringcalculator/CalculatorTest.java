@@ -33,6 +33,11 @@ public class CalculatorTest {
 	}
 
 	@Test
+	public void testStringNumbersOnlySeperatedByNewline() {
+		assertEquals(16, Calculator.add("2\n3\n10\n1"));
+	}
+
+	@Test
 	public void testStringWithOneNegNumber() {
 	    try {
 			assertEquals(1, Calculator.add("-1,2"));
