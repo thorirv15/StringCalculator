@@ -53,6 +53,16 @@ public class CalculatorTest {
 	}
 
 	@Test
+	public void testStringWithOnlyNegNumbers() {
+	    try {
+			assertEquals(-14, Calculator.add("-2,-4,-3,-5"));
+		}
+		catch (Exception e) {
+			assertEquals("Negatives not allowed: -2,-4,-3,-5", e.getMessage());
+		}
+	}
+
+	@Test
 	public void testIfnumbersAbove1000AreIgnored() {
 		assertEquals(2, Calculator.add("1001,2"));
 	}
