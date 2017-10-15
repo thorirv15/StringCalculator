@@ -40,18 +40,18 @@ public class Calculator {
 	private static boolean validationForInput(String numbers) {
 		String [] numberArr = getSplittedArr(numbers);
 		boolean isNegNumber = false;
-		String errString = "";
+		String errorString = "";
 
 		for(int i = 0; i < numberArr.length; i++) {
 			if(toInt(numberArr[i]) < 0) {
-				errString += (numberArr[i] + ",");
+				errorString += (numberArr[i] + ",");
 				isNegNumber = true;
 			} 
 		}
 
 		if(isNegNumber) {
-			String errorString = errString.substring(0, errString.length() - 1);
-			throw new IllegalArgumentException("Negatives not allowed: " + errorString);
+			String exceptionString = errorString.substring(0, errorString.length() - 1);
+			throw new IllegalArgumentException("Negatives not allowed: " + exceptionString);
 		}
 
 		return false;
@@ -59,11 +59,10 @@ public class Calculator {
 
 	public static int add(String numbers) {
 		if(numbers.isEmpty()) {
-				return 0;
+			return 0;
 		}
 
-		if(!validationForInput(numbers)){
-			
+		if(!validationForInput(numbers)){		
 			int sum = getSum(numbers);
 			return sum;
 		}
